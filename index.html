@@ -1,10 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Play MP3 on Button Click</title>
+<title>MedRhythms Rocks!</title>
+<style>
+/* CSS to make the button larger */
+.large-button {
+  width: 200px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+  padding: 10px 20px; /* Adjust the padding as needed */
+}
+</style>
 </head>
 <body>
 
@@ -13,7 +21,7 @@
   Your browser does not support the audio element.
 </audio>
 
-<button onclick="document.getElementById('audioPlayer').play()">Turn Down</button>
+<button class="large-button" onclick="document.getElementById('audioPlayer').play()">Turn Down</button>
 
 </body>
 </html>
