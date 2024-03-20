@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedRhythms Rocks!</title>
-<link rel="icon" type="image/png" href="mr.png">
-<link rel="apple-touch-icon" href="mr.png">
+<link rel="icon" type="image/png" href="path/to/your-favicon.png"> <!-- Favicon for browser tab -->
+<link rel="apple-touch-icon" href="path/to/your-apple-touch-icon.png"> <!-- Apple Touch Icon for home screen -->
 <style>
 /* CSS to make the button larger */
 .large-button {
@@ -23,9 +23,17 @@
   Your browser does not support the audio element.
 </audio>
 
-<button class="large-button" onclick="document.getElementById('audioPlayer').play()">
+<button class="large-button" onclick="restartAudio()">
   Turn Down
 </button>
+
+<script>
+function restartAudio() {
+  var audio = document.getElementById('audioPlayer');
+  audio.currentTime = 0;
+  audio.play();
+}
+</script>
 
 </body>
 </html>
