@@ -12,29 +12,55 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <style>
-/* CSS to make the button larger */
+/* CSS to center the buttons vertically and horizontally and make them larger */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .large-button {
-  width: 380px; /* Adjust the width as needed */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 380px; /* Set a maximum width */
   height: 100px; /* Adjust the height as needed */
   font-size: 40px; /* Adjust the font size as needed */
   padding: 10px 20px; /* Adjust the padding as needed */
+  margin-bottom: 10px; /* Add margin between buttons */
 }
 </style>
 </head>
 <body>
 
-<audio id="audioPlayer" controls style="display:none;">
-  <source src="turn-down-for-what.mp3" type="audio/mpeg">
+<audio id="audioPlayer" controls="" style="display:none;">
+  <source src="" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<button class="large-button" onclick="restartAudio()">
-  Turn Down
-</button>
+<div class="button-container">
+  <button class="large-button" onclick="playAudio('sounds/turn-down-for-what.mp3')">
+    Turn Down
+  </button>
+
+  <button class="large-button" onclick="playAudio('sounds/airhorn.mp3')">
+    Air horn
+  </button>
+
+  <!--<button class="large-button" onclick="playAudio('yet-another-audio-file.mp3')">
+    Play Yet Another Audio
+  </button>-->
+</div>
 
 <script>
-function restartAudio() {
+function playAudio(audioSrc) {
   var audio = document.getElementById('audioPlayer');
+  audio.src = audioSrc;
   audio.currentTime = 0;
   audio.play();
 }
